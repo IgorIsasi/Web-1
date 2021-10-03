@@ -20,13 +20,11 @@
   $erabiltzailea=$_POST['txtIzena'];
   $pasahitza=$_POST['txtPasahitza'];
 
-  $query=mysqli_query($conn,"SELECT * FROM usuarios" ) or die (mysqli_error($query));
+  $result=mysqli_query($conn,"SELECT * FROM usuarios WHERE erabiltzailea='$erabiltzailea' and pasahitza='$pasahitza'");
+  $nr=mysqli_num_rows($result);
 
-  while($row=mysqli_fetch_array($query)){
-    echo
-    "<b>{$row['erabiltzailea']}</b>
-    <td>{$row['pasahitza']}</td>
-    <br>";
+  if($nr>=1){
+    echo"Saioa hasita";
   }
 
   
