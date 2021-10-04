@@ -4,7 +4,7 @@
 
   <div id="formContent">
     <!-- Tabs Titles -->
-    <h2 class="active"> Saioa hasi </h2>
+    <h2 class="active"> Saioa hasi hola</h2>
     <a href="registratu.php" class="inactive underlineHover">Registratu </a>
 
     <!-- Icon -->
