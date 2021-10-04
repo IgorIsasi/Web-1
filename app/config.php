@@ -1,7 +1,7 @@
 <?php
-$hostname = "db";
-$username = "admin";
-$password = "test";
+$hostname = "localhost";
+$username = "root";
+$password = "";
 $db = "database";
 
 //Datu basearen konexioa

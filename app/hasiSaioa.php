@@ -24,7 +24,7 @@
     }
     ?>
 </div>
-<div class="wrapper fadeInDown">
+<div class="wrapper">
 <div id="formContent">
   <!-- Tabs Titles -->
   <h2 class="active"> Saioa hasi</h2>
