@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>
+			Erregistroa
+		</title>
+		<script type="text/javascript" src="datuakEgiaztatu.js"></script>
+	</head>
+	<body>
+		<h1>Erregistroa</h1>
+		<form name="erregistroa" action="erregistroaDB.php" method=POST>
+			<p>IZENA: <input type="text" name="izena" placeholder="Izena sartu"></p>
+			<p>ABIZENAK: <input type="text" name="abizenak" placeholder="Bi abizenak sartu"></p>
+			<p>NAN: <input type="text" name="NAN" placeholder="NAN zenbakia sartu"></p>
+			<p>TELEFONOA: <input type="tel" name="telefonoa" placeholder="Telefono zenbakia sartu"></p>
+			<p>JAIOTZE DATA: <input type="date" name="jaiotzeData" placeholder="Jaiotze-data sartu"></p>
+			<p>EMAIL: <input type="email" name="email" placeholder="Email-a sartu"></p>
+			<p>PASAHITZA: <input type="password" name="pasahitza" placeholder="Pasahitza sartu"></p>
+			<input type="button" value="Erregistratu" onclick="datuakEgiaztatuErregistroa()">
+			<input type="reset" value="Ezabatu">
+		</form>
+	</body>
+</html>
