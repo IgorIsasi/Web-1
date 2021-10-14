@@ -7,16 +7,16 @@
 	</head>
 	<body>
 		<h1>Erregistroa</h1>
-		<form name="erregistroa" action="erregistroaDB.php" method=POST>
-			<p>IZENA: <input type="text" name="izena" placeholder="Izena sartu"></p>
-			<p>ABIZENAK: <input type="text" name="abizenak" placeholder="Bi abizenak sartu"></p>
-			<p>NAN: <input type="text" name="NAN" placeholder="NAN zenbakia sartu"></p>
-			<p>TELEFONOA: <input type="tel" name="telefonoa" placeholder="Telefono zenbakia sartu"></p>
-			<p>JAIOTZE DATA: <input type="date" name="jaiotzeData" placeholder="Jaiotze-data sartu"></p>
-			<p>EMAIL: <input type="email" name="email" placeholder="Email-a sartu"></p>
-			<p>PASAHITZA: <input type="password" name="pasahitza" placeholder="Pasahitza sartu"></p>
-			<input type="button" value="Erregistratu" onclick="datuakEgiaztatuErregistroa()">
-			<input type="reset" value="Ezabatu">
+		<form name="erregistroa" id="idFormulario" action="">
+			<p>IZENA: <input type="text" id="idIzena" name="izena" placeholder="Izena sartu"></p>
+			<p>ABIZENAK: <input type="text" id="idAbizena" name="abizenak" placeholder="Bi abizenak sartu"></p>
+			<p>NAN: <input type="text" name="NAN" id="idNan" placeholder="NAN zenbakia sartu"></p>
+			<p>TELEFONOA: <input type="tel" name="telefonoa" id="idTelefonoa" placeholder="Telefono zenbakia sartu"></p>
+			<p>JAIOTZE DATA: <input type="date" name="jaiotzeData" id="idJaiotzeData" placeholder="Jaiotze-data sartu"></p>
+			<p>EMAIL: <input type="email" name="email" id="idEmail" placeholder="Email-a sartu"></p>
+			<p>PASAHITZA: <input type="password" name="pasahitza" id="idPasahitza" placeholder="Pasahitza sartu"></p>
+			<button type="submit" class="formulario__btn">Enviar</button>
 		</form>
+		<link rel="stylesheet" href="webItxura.css">
 	</body>
 </html>

@@ -1,3 +1,18 @@
+const formulario = document.getElementById('idFormulario');
+const inputs = document.querySelectorAll('#formulario input');
+
+
+const expresiones = {
+	izena: /^[a-zA-ZÀ-ÿ\s]{8,25}$/, // Letras y espacios, pueden llevar acentos.
+	pasahitza: /^.{4,12}$/, // 4 a 12 digitos.
+	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	telefonoa: /^\d{9}$/, // 7 a 14 numeros.
+        NAN: /^\d{8}[A-Z]{1}$/
+
+}
+
+
+
 function datuakEgiaztatuLogin(){
    var email = document.login.email.value;
    var pasahitza = document.login.pasahitza.value;
@@ -14,16 +29,21 @@ function datuakEgiaztatuLogin(){
 }
 
 function datuakEgiaztatuErregistroa(){
-   var izena = document.erregistroa.izena.value;
-   var abizenak = document.erregistroa.abizenak.value;
-   var NAN = document.erregistroa.NAN.value;
-   var telefonoa = document.erregistroa.telefonoa.value;
-   var jaiotzeData = document.erregistroa.jaiotzeData.value;
-   var email = document.erregistroa.email.value;
-   var pasahitza = document.erregistroa.pasahitza.value;
+        
+
+
+   var izena = document.getElementById('idIzena');
+   var abizenak = document.getElementById('idAbizena');
+   var NAN = document.getElementById('idNan');
+   var telefonoa = document.getElementById('idTelefonoa');
+   var jaiotzeData = document.getElementById('idJaiotzeData');
+   var email = document.getElementById('idEmail');
+   var pasahitza = document.getElementById('idPasahitza');
+
+
 
    if (izena.length <= 0){
-           window.alert("Izena sartu");
+           
    }
    else if (abizenak.length <= 0){
            window.alert("Abizenak sartu");
