@@ -1,39 +1,32 @@
-const formulario = document.getElementById('idFormulario');
-const inputs = document.querySelectorAll('#idFormulario input');
+const formulario = document.getElementById('formulario');
+const inputs = document.querySelectorAll('#formulario input');
 
 const espresioak = {
-    Nan: /^\d{8}[A-Z]$/, // 7 a 14 numeros.
-	izenaAbizena: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-	pasahitza: /^.{4,12}$/, // 4 a 12 digitos.
+    nan: /^\d{8}[A-Z]$/, // 7 a 14 numeros.
+	izenAbizen: /^[a-zA-ZÀ-ÿ\s]{5,40}$/, // Letras y espacios, pueden llevar acentos.
+	pasahitza: /^.{8,20}$/, // 4 a 12 digitos.
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	telefonoa: /^\d{9}$/ // 7 a 14 numeros.
 }
 const validarFormulario=(e)=>{
     switch(e.target.name){
-        case "idIzena":
-            if(espresioak.izenaAbizena.test(e.target.value)){
-
-            }else{
-                document.getElementById('idIzena').classList.add()
-            }
-        
+        case "izenAbizen":
+            validarCampo(espresioak.izenAbizen, e.target, 'izenAbizen');
         break;        
-        case "idAbizena":
+        case "nan":
+            validarCampo(espresioak.nan, e.target, 'nan');
+        break;
+        case "pasahitza":
+            validarCampo(espresioak.pasahitza, e.target, 'pasahitza');        
+        break;
+        case "telefonoa":
+            validarCampo(espresioak.telefonoa, e.target, 'telefonoa');
         
         break;
-        case "idNan":
+        case "jaiotzeData":
         
         break;
-        case "idTelefonoa":
-        
-        break;
-        case "idJaiotzeData":
-        
-        break;
-        case "idEmail":
-        
-        break;
-        case "idPasahitza":
+        case "email":
         
         break;
 
@@ -41,8 +34,26 @@ const validarFormulario=(e)=>{
     
 }
 
+const validarCampo=(expresion,input,campo)=>{
+    if(expresion.test(input.value)){
+        document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+        document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
+        document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+        document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');            
+        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo')
+    }else{
+        document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+        document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
+        document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+        document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
+        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo')
+    }
+}
 
-inputs.forEach((input)=>{
+
+inputs.forEach((input)=>{ 
+    //Zerbai input batean aldatzen bada validarFormulario() funtzioa
+    //exekutatuko da. Baita input-aren kanpoan klik egiten bada.
     input.addEventListener('keyup',validarFormulario);
     input.addEventListener('blur',validarFormulario);
 })
