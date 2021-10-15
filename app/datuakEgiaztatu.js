@@ -9,6 +9,18 @@ const espresioak = {
 	telefonoa: /^\d{9}$/, // 7 a 14 numeros.
     jaiotzeData: /^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/
 }
+
+const hutsuneenEgoera={
+    izenAbizen:false,
+    jaiotzeData:false,
+    nan:false,
+    pasahitza:false,
+    pasahitza2:false,
+    email:false,
+    telefonoa:false
+
+}
+
 const erregistroaOnartu=(e)=>{
     switch(e.target.name){
         case "izenAbizen":
@@ -19,6 +31,7 @@ const erregistroaOnartu=(e)=>{
         break;
         case "pasahitza":
             hutsuneaOnartu(espresioak.pasahitza, e.target, 'pasahitza');        
+            pasahitza2Onartu();
         break;
         case "pasahitza2": 
         //Kasu honetan pasahitza errepikatua ez du beste inputen era berean jokatzen
@@ -46,13 +59,15 @@ const pasahitza2Onartu=()=>{
         document.querySelector(`#grupo__pasahitza2 i`).classList.remove('fa-times-circle');
         document.getElementById(`grupo__pasahitza2`).classList.add('formulario__grupo-correcto');
         document.querySelector(`#grupo__pasahitza2 i`).classList.add('fa-check-circle');            
-        document.querySelector(`#grupo__pasahitza2 .formulario__input-error`).classList.remove('formulario__input-error-activo')
+        document.querySelector(`#grupo__pasahitza2 .formulario__input-error`).classList.remove('formulario__input-error-activo');
+        hutsuneenEgoera['pasahitza2']=true
     }else{
         document.getElementById(`grupo__pasahitza2`).classList.add('formulario__grupo-incorrecto');
         document.querySelector(`#grupo__pasahitza2 i`).classList.add('fa-times-circle');
         document.getElementById(`grupo__pasahitza2`).classList.remove('formulario__grupo-correcto');
         document.querySelector(`#grupo__pasahitza2 i`).classList.remove('fa-check-circle');            
-        document.querySelector(`#grupo__pasahitza2 .formulario__input-error`).classList.add('formulario__input-error-activo')
+        document.querySelector(`#grupo__pasahitza2 .formulario__input-error`).classList.add('formulario__input-error-activo');
+        hutsuneenEgoera['pasahitza2']=false
     }
 
 
@@ -64,13 +79,15 @@ const hutsuneaOnartu=(expresion,input,campo)=>{
         document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
         document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
         document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');            
-        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo')
+        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
+        hutsuneenEgoera[campo]=true;
     }else{
         document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
         document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
         document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
         document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
-        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo')
+        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+        hutsuneenEgoera[campo]=false;
     }
 }
 
@@ -80,8 +97,32 @@ inputs.forEach((input)=>{
     //exekutatuko da. Baita input-aren kanpoan klik egiten bada.
     input.addEventListener('keyup',erregistroaOnartu);
     input.addEventListener('blur',erregistroaOnartu);
+    
 })
 
 formulario.addEventListener('submit', (e)=>{
     e.preventDefault(); //Para evitar que sea enviado
+    if(hutsuneenEgoera.izenAbizen && hutsuneenEgoera.jaiotzeData && hutsuneenEgoera.nan && 
+        hutsuneenEgoera.pasahitza && hutsuneenEgoera.pasahitza2 && hutsuneenEgoera.email && hutsuneenEgoera.telefonoa){
+            formulario.reset();
+            document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+            setTimeout(()=>{
+                document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+                document.querySelectorAll('.formulario__grupo-correcto').forEach((icono)=>{
+                    icono.classList.remove('formulario__grupo-correcto');
+                })
+            }, 1500);
+        hutsuneenEgoera.izenAbizen=false;
+        hutsuneenEgoera.jaiotzeData=false;
+        hutsuneenEgoera.nan=false;
+        hutsuneenEgoera.pasahitza=false;
+        hutsuneenEgoera.pasahitza2=false;
+        hutsuneenEgoera.email=false;
+        hutsuneenEgoera.telefonoa=false;
+
+
+    }else{
+        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+        
+    }
 })

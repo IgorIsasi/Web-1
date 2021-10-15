@@ -9,7 +9,6 @@
 <body>
 	<main>
 		<form action="" class="formulario" id="formulario">
-			
 			<!-- Grupo: Izenabizen -->
 			<div class="formulario__grupo" id="grupo__izenAbizen">
 				<label for="izenAbizen" class="formulario__label">Izena eta Abizenak</label>
@@ -24,7 +23,7 @@
 			<div class="formulario__grupo" id="grupo__jaiotzeData">
 				<label for="jaiotzeData" class="formulario__label">Jaiotze data</label>
 				<div class="formulario__grupo-input">
-					<input type="text" class="formulario__input" name="jaiotzeData" id="jaiotzeData" placeholder="">
+					<input type="date" class="formulario__input" name="jaiotzeData" id="jaiotzeData" placeholder="04/09/2001">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
 				<p class="formulario__input-error">Izen eta abizenak gutxienez 5 karakter izan behar ditu eta gehienez 40</p>
@@ -79,15 +78,13 @@
 				</div>
 				<p class="formulario__input-error">Telefono zenbakiak 9 digitu izan behar ditu soilik.</p>
 			</div>
-
-
 			<div class="formulario__mensaje" id="formulario__mensaje">
-				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Mezedez era egokian bete itzazu erregistroa </p>
 			</div>
 
 			<div class="formulario__grupo formulario__grupo-btn-enviar">
 				<button type="submit" class="formulario__btn">Bidali</button>
-				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Zure erregistroa bidali da!</p>
 			</div>
 		</form>
 	</main>
