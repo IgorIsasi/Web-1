@@ -29,7 +29,6 @@ const validarFormulario=(e)=>{
         case "email":
             validarCampo(espresioak.email, e.target, 'email')
         break;
-
     }
     
 }
