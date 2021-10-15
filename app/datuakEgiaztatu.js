@@ -6,7 +6,8 @@ const espresioak = {
 	izenAbizen: /^[a-zA-ZÀ-ÿ\s]{5,40}$/, // Letras y espacios, pueden llevar acentos.
 	pasahitza: /^.{8,20}$/, // 4 a 12 digitos.
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	telefonoa: /^\d{9}$/ // 7 a 14 numeros.
+	telefonoa: /^\d{9}$/, // 7 a 14 numeros.
+    jaiotzeData: /^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/
 }
 const validarFormulario=(e)=>{
     switch(e.target.name){
@@ -21,13 +22,12 @@ const validarFormulario=(e)=>{
         break;
         case "telefonoa":
             validarCampo(espresioak.telefonoa, e.target, 'telefonoa');
-        
         break;
         case "jaiotzeData":
-        
+            validarCampo(espresioak.jaiotzeData, e.target, 'jaiotzeData');
         break;
         case "email":
-        
+            validarCampo(espresioak.email, e.target, 'email')
         break;
 
     }
