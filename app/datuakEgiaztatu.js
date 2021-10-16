@@ -100,8 +100,7 @@ inputs.forEach((input)=>{
     
 })
 
-formulario.addEventListener('submit', (e)=>{
-    e.preventDefault(); //Para evitar que sea enviado
+formulario.addEventListener('submit', (e)=>{ // Lo que se activa cuando el formulario es enviado //Para evitar que sea enviado
     if(hutsuneenEgoera.izenAbizen && hutsuneenEgoera.jaiotzeData && hutsuneenEgoera.nan && 
         hutsuneenEgoera.pasahitza && hutsuneenEgoera.pasahitza2 && hutsuneenEgoera.email && hutsuneenEgoera.telefonoa){
             formulario.reset();
@@ -119,6 +118,8 @@ formulario.addEventListener('submit', (e)=>{
         hutsuneenEgoera.pasahitza2=false;
         hutsuneenEgoera.email=false;
         hutsuneenEgoera.telefonoa=false;
+        document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
+        
 
 
     }else{

@@ -8,7 +8,7 @@
 </head>
 <body>
 	<main>
-		<form action="" class="formulario" id="formulario">
+		<form action="erregistroaBidali.php" class="formulario" id="formulario" method="post">
 			<!-- Grupo: Izenabizen -->
 			<div class="formulario__grupo" id="grupo__izenAbizen">
 				<label for="izenAbizen" class="formulario__label">Izena eta Abizenak</label>
@@ -79,16 +79,20 @@
 				<p class="formulario__input-error">Telefono zenbakiak 9 digitu izan behar ditu soilik.</p>
 			</div>
 			<div class="formulario__mensaje" id="formulario__mensaje">
-				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Mezedez era egokian bete itzazu erregistroa </p>
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Errorea:</b> Mezedez hutsune guztiak bete</p>
 			</div>
 
 			<div class="formulario__grupo formulario__grupo-btn-enviar">
-				<button type="submit" class="formulario__btn">Bidali</button>
-				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Zure erregistroa bidali da!</p>
+				<button type="submit" class="formulario__btn"> <i class="fas fa-paper-plane"> </i>   Bidali</button>
+				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito"> </i> Zure erregistroa bidali da!</p>
 			</div>
+
+			<div class="formulario__grupo formulario__grupo-btn-enviar">
+				<a href="index.html" class="formulario__btn" > <i class="fas fa-caret-left fa-lg"></i> Atzera</a>
+			</div>
+			
 		</form>
 	</main>
-
 	<script src="datuakEgiaztatu.js"></script>
 	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>  <!-- Para que los iconos funcionen -->
 </body>
