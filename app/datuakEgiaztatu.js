@@ -119,10 +119,15 @@ formulario.addEventListener('submit', (e)=>{ // Lo que se activa cuando el formu
         hutsuneenEgoera.email=false;
         hutsuneenEgoera.telefonoa=false;
         document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
+        var datuak=new FormData(formulario);
+        fetch('erregistroaBidali.php',{
+            method: 'POST',
+            body: datuak
+        })          
         
 
-
     }else{
+        e.preventDefault();
         document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
         
     }
