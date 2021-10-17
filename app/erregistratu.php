@@ -2,8 +2,6 @@
 
 include 'config.php';
 
-echo "New record created successfully";
-
 $izenAbizen = $_POST['izenAbizen'];
 $nan = $_POST['nan'];
 $telefonoa = $_POST['telefonoa'];
