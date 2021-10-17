@@ -3,7 +3,7 @@ const inputs = document.querySelectorAll('#formulario input');
 
 const espresioak = {
     nan: /^\d{8}[A-Z]$/, // 7 a 14 numeros.
-	izenAbizen: /^[a-zA-ZÀ-ÿ\s]{5,40}$/, // Letras y espacios, pueden llevar acentos.
+	izenAbizen: /^[a-zA-Z\s]{5,40}$/, // Letras y espacios, pueden llevar acentos.
 	pasahitza: /^.{8,20}$/, // 4 a 12 digitos.
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	telefonoa: /^\d{9}$/, // 7 a 14 numeros.
@@ -103,7 +103,6 @@ inputs.forEach((input)=>{
 formulario.addEventListener('submit', (e)=>{ // Lo que se activa cuando el formulario es enviado //Para evitar que sea enviado
     if(hutsuneenEgoera.izenAbizen && hutsuneenEgoera.jaiotzeData && hutsuneenEgoera.nan && 
         hutsuneenEgoera.pasahitza && hutsuneenEgoera.pasahitza2 && hutsuneenEgoera.email && hutsuneenEgoera.telefonoa){
-            formulario.reset();
             document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
             setTimeout(()=>{
                 document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
@@ -119,13 +118,7 @@ formulario.addEventListener('submit', (e)=>{ // Lo que se activa cuando el formu
         hutsuneenEgoera.email=false;
         hutsuneenEgoera.telefonoa=false;
         document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
-        var datuak=new FormData(formulario);
-        fetch('erregistroaBidali.php',{
-            method: 'POST',
-            body: datuak
-        })          
         
-
     }else{
         e.preventDefault();
         document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');

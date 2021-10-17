@@ -105,8 +105,8 @@ a{
 }
 
 .formulario__btn {
-	height: 45px;
-	line-height: 45px;
+	height: 35px;
+	line-height: 35px;
 	width: 30%;
 	background: #000;
 	color: #fff;
@@ -157,6 +157,10 @@ a{
 @media screen and (max-width: 800px) {
 	.formulario {
 		grid-template-columns: 1fr;
+	}
+
+	.formularioLogin {
+		grid-template-columns: 2fr;
 	}
 
 	.formulario__grupo-terminos, 
