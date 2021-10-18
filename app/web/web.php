@@ -18,7 +18,8 @@
                 ?>
                 <div class="liburua">
                     <tr>
-                        <td><img src="data:image/jpeg;base64,<?php echo base64_encode($row['irudia']); ?>" class = "irudia"></td>
+                        
+                        <td><img src="<?php echo ("../irudiak/".$row['irudia']); ?>" class = "irudia"></td>
                     </tr>
                     <div class = "textua">
                         <p class = "izena"><?php echo $row['izena']; ?></p>

@@ -3,11 +3,11 @@
 		<title>
 			Liburua sartu
 		</title>
-		<script type="text/javascript" src="../datuakEgiaztatu.js"></script>
+		<script type="text/javascript" src="liburuDatuakEgiaztatu.js"></script>
 	</head>
 	<body>
 		<h1>Liburua katalogoan sartu</h1>
-		<form name="liburuaSartu" action="liburuaSartuDB.php" method=POST>
+		<form name="liburuaSartu" action="liburuaSartuDB.php" method=POST enctype="multipart/form-data">
 			<p>IZENA: <input type="text" name="izena" placeholder="Libururaren izena sartu"></p>
 			<p>EGILEA: <input type="text" name="egilea" placeholder="Egilearen izen-abizena sartu"></p>
 			<p>ORRI KOPURUA: <input type="number" name="orriKop" placeholder="Liburuaren orri kopurua sartu"></p>
