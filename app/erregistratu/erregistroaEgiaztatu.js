@@ -1,10 +1,10 @@
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 
-const espresioak = {
-    izena: /^[a-zA-Z]{$/,
+const espresioak={
+    izena: /^[a-zA-Z]{6,15}$/,
     nan: /^\d{8}[A-Z]$/, // 7 a 14 numeros.
-	izenAbizen: /^[a-zA-Z\s]{5,40}$/, // Letras y espacios, pueden llevar acentos.
+	abizenak: /^[a-zA-Z\s]{5,40}$/, // Letras y espacios, pueden llevar acentos.
 	pasahitza: /^.{8,20}$/, // 4 a 12 digitos.
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	telefonoa: /^\d{9}$/, // 7 a 14 numeros.
@@ -12,7 +12,8 @@ const espresioak = {
 }
 
 const hutsuneenEgoera={
-    izenAbizen:false,
+    izena:false,
+    abizenak:false,
     jaiotzeData:false,
     nan:false,
     pasahitza:false,
@@ -24,8 +25,11 @@ const hutsuneenEgoera={
 
 const erregistroaOnartu=(e)=>{
     switch(e.target.name){
-        case "izenAbizen":
-            hutsuneaOnartu(espresioak.izenAbizen, e.target, 'izenAbizen');
+        case "izena":
+            hutsuneaOnartu(espresioak.izena, e.target, 'izena');
+        break;
+        case "abizenak":
+            hutsuneaOnartu(espresioak.abizenak, e.target, 'abizenak');
         break;        
         case "nan":
             hutsuneaOnartu(espresioak.nan, e.target, 'nan');
@@ -102,7 +106,7 @@ inputs.forEach((input)=>{
 })
 
 formulario.addEventListener('submit', (e)=>{ // Lo que se activa cuando el formulario es enviado //Para evitar que sea enviado
-    if(hutsuneenEgoera.izenAbizen && hutsuneenEgoera.jaiotzeData && hutsuneenEgoera.nan && 
+    if(hutsuneenEgoera.izena && hutsuneenEgoera.abizenak && hutsuneenEgoera.jaiotzeData && hutsuneenEgoera.nan && 
         hutsuneenEgoera.pasahitza && hutsuneenEgoera.pasahitza2 && hutsuneenEgoera.email && hutsuneenEgoera.telefonoa){
             document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
             setTimeout(()=>{
@@ -111,13 +115,15 @@ formulario.addEventListener('submit', (e)=>{ // Lo que se activa cuando el formu
                     icono.classList.remove('formulario__grupo-correcto');
                 })
             }, 1500);
-        hutsuneenEgoera.izenAbizen=false;
+        hutsuneenEgoera.izena=false;
+        hutsuneenEgoera.abizenak=false;
         hutsuneenEgoera.jaiotzeData=false;
         hutsuneenEgoera.nan=false;
         hutsuneenEgoera.pasahitza=false;
         hutsuneenEgoera.pasahitza2=false;
         hutsuneenEgoera.email=false;
         hutsuneenEgoera.telefonoa=false;
+    
         document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
         
     }else{
