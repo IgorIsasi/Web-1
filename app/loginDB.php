@@ -4,11 +4,10 @@
   $email = $_POST['email'];
   $pasahitza = $_POST['pasahitza'];
 
-  echo $email;
-  echo $pasahitza;
 
-  $zutabekop = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM usuarios WHERE email = '$email' AND pasahitza = '$pasahitza'"));
-
+  $emaitza = mysqli_query($conn,"SELECT * FROM usuarios WHERE email = '$email' AND pasahitza = '$pasahitza'");
+  $zutabekop= mysqli_num_rows($emaitza);
+  echo $zutabekop;
 if($zutabekop <= 0){
   echo $email;
   echo $pasahitza;
