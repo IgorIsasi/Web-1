@@ -37,7 +37,8 @@
             <div class = "liburuaSartu" ><input type="button" value = "Liburua sartu" onclick = "location.href = 'liburuaSartu.html'"></div>
             <div class = "liburuaEzabatu"><input type="button" value = "Liburua ezabatu" onclick = "location.href = 'liburuaEzabatu.html'"></div>
             <div class = "liburuaErreserbatu"><input type="button" value = "Liburua erreserbatu" onclick = "location.href = 'liburuaErreserbatu.html'"></div>
-            <div class = "sesioaItxi"><input type="button" value = "Sesioa itxi" onclick = "location.href = '../index.html'"></div>
+            <div class = "erreserbakIkusi"><input type="button" value = "Erreserbak ikusi" onclick = "location.href = 'erreserbakIkusi.php'"></div>
+            <div class = "sesioaItxi"><input type="button" value = "Sesioa itxi" onclick = "location.href = 'sesioaItxi.php'"></div>
         </div>
         </body>
 </html>

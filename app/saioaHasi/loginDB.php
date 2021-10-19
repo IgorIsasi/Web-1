@@ -1,10 +1,9 @@
 <?php //Para evitar que de problemas con el header
 ob_start();
-?>
-
-<?php
   include '../config.php';
+  session_start();
   $email = $_POST['email'];
+  $_SESSION['email'] = $email;
   $pasahitza = $_POST['pasahitza'];
   $emaitza = mysqli_query($conn,"SELECT * FROM usuarios WHERE email = '$email' AND pasahitza = '$pasahitza'");
   $zutabekop= mysqli_num_rows($emaitza);
@@ -14,8 +13,6 @@ if($zutabekop <= 0){
 }else{
   header('Location: ../web/web.php');
 }
-?>
-
-<?php //Para evitar que de problemas con el header
+//Para evitar que de problemas con el header
 ob_end_flush();
 ?>

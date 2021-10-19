@@ -1,4 +1,3 @@
-
 <?php
 
 include '../config.php';
@@ -15,10 +14,8 @@ $sql = "INSERT INTO `usuarios`(`izena`,`abizenak`, `nan`, `jaiotzeData`, `pasahi
 VALUES ('$izena', '$abizenak','$nan','$jaiotzeData','$pasahitza','$telefonoa','$email')";
 
 if (mysqli_query($conn, $sql)) {
-    header('Location:../erregistratu/');
+    header('Location:../saioaHasi/');
   } else{
     printf("Errormessage: %s\n", $conn->error);
   }
-  
-
 ?>

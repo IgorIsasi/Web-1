@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Oct 18, 2021 at 05:12 PM
+-- Generation Time: Oct 19, 2021 at 05:22 PM
 -- Server version: 10.6.4-MariaDB-1:10.6.4+maria~focal
 -- PHP Version: 7.4.20
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `database`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `erreserba`
+--
+
+CREATE TABLE `erreserba` (
+  `liburuIzena` varchar(40) NOT NULL,
+  `liburuEgilea` varchar(40) NOT NULL,
+  `erabEmail` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `erreserba`
+--
+
+INSERT INTO `erreserba` (`liburuIzena`, `liburuEgilea`, `erabEmail`) VALUES
+('La Metamorfosis', 'Franz Kafka', 'pop@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -41,7 +60,7 @@ CREATE TABLE `liburua` (
 --
 
 INSERT INTO `liburua` (`izena`, `orriKop`, `egilea`, `kopurua`, `prezioa`, `irudia`) VALUES
-('La Metamorfosis', 128, 'Franz Kafka', 18, 16, 'LaMetamorfosis.jpg');
+('La Metamorfosis', 128, 'Franz Kafka', 17, 16, 'LaMetamorfosis.jpg');
 
 -- --------------------------------------------------------
 
@@ -50,12 +69,12 @@ INSERT INTO `liburua` (`izena`, `orriKop`, `egilea`, `kopurua`, `prezioa`, `irud
 --
 
 CREATE TABLE `usuarios` (
-  `erabiltzailea` varchar(50) NOT NULL,
-  `izenAbizena` varchar(50) NOT NULL,
-  `email` text NOT NULL,
+  `izena` varchar(50) NOT NULL,
+  `abizenak` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `nan` varchar(9) NOT NULL,
   `jaiotzeData` date NOT NULL,
-  `Pasahitza` varchar(50) NOT NULL,
+  `pasahitza` varchar(50) NOT NULL,
   `telefonoa` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -63,12 +82,19 @@ CREATE TABLE `usuarios` (
 -- Dumping data for table `usuarios`
 --
 
-INSERT INTO `usuarios` (`erabiltzailea`, `izenAbizena`, `email`, `nan`, `jaiotzeData`, `Pasahitza`, `telefonoa`) VALUES
-('Markel', 'Markel Rubiños', 'markelmontejo@gmail.com', '20975528B', '2001-09-04', '123123', 667261029);
+INSERT INTO `usuarios` (`izena`, `abizenak`, `email`, `nan`, `jaiotzeData`, `pasahitza`, `telefonoa`) VALUES
+('Igor', 'Isasi Diez', 'pop@gmail.com', '12345678A', '2003-09-11', '12345678', 123456789);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `erreserba`
+--
+ALTER TABLE `erreserba`
+  ADD PRIMARY KEY (`liburuIzena`,`liburuEgilea`,`erabEmail`),
+  ADD KEY `erabEmail` (`erabEmail`);
 
 --
 -- Indexes for table `liburua`
@@ -80,10 +106,18 @@ ALTER TABLE `liburua`
 -- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`erabiltzailea`),
-  ADD UNIQUE KEY `nan` (`nan`),
-  ADD UNIQUE KEY `telefonoa` (`telefonoa`),
-  ADD UNIQUE KEY `email` (`email`) USING HASH;
+  ADD PRIMARY KEY (`email`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `erreserba`
+--
+ALTER TABLE `erreserba`
+  ADD CONSTRAINT `erreserba_ibfk_1` FOREIGN KEY (`erabEmail`) REFERENCES `usuarios` (`email`),
+  ADD CONSTRAINT `erreserba_ibfk_2` FOREIGN KEY (`liburuIzena`,`liburuEgilea`) REFERENCES `liburua` (`izena`, `egilea`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
