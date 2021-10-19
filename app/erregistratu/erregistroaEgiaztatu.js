@@ -2,7 +2,7 @@ const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 
 const espresioak={
-    izena: /^[a-zA-Z]{6,15}$/,
+    izena: /^[a-zA-Z]{4,15}$/,
     nan: /^\d{8}[A-Z]$/, // 7 a 14 numeros.
 	abizenak: /^[a-zA-Z\s]{5,40}$/, // Letras y espacios, pueden llevar acentos.
 	pasahitza: /^.{8,20}$/, // 4 a 12 digitos.
