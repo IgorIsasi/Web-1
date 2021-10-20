@@ -10,8 +10,10 @@ ob_start();
   $zutabekop= mysqli_num_rows($emaitza);
 if($zutabekop > 0){
   header('Location: ../web/web.php');
+  
 }else{
   header('Location: index.html');
+  
 }
 ?>
 

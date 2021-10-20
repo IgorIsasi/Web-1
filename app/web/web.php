@@ -17,7 +17,7 @@
             while ($row = mysqli_fetch_array($query)) {
                 ?>
                 <div class="liburuTxartela">
-                    <img src="<?php echo $row['irudia']?>" style="width:100%"> 
+                    <img src="<?php echo $row['irudia']?>"> 
                     <div class="liburuDatuak">
                         <h4><b><?php echo $row['izena']; ?></b></h4>
                         <p><?php echo ($row['egilea']); ?></p>
