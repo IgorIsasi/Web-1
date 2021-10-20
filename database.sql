@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: db
--- Tiempo de generación: 20-10-2021 a las 16:26:32
--- Versión del servidor: 10.6.4-MariaDB-1:10.6.4+maria~focal
--- Versión de PHP: 7.4.20
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 20-10-2021 a las 22:36:44
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,7 +42,13 @@ CREATE TABLE `liburua` (
 
 INSERT INTO `liburua` (`izena`, `orriKop`, `egilea`, `kopurua`, `prezioa`, `irudia`) VALUES
 ('El Último Trabajo Del Señor Luna', 248, 'Cesar Mallorquí', 12, 20, 'https://imagessl8.casadellibro.com/a/l/t7/98/9788423676798.jpg'),
-('La Metamorfosis', 128, 'Franz Kafka', 18, 16, 'https://images-na.ssl-images-amazon.com/images/I/81B6ebdgtZL.jpg');
+('Enigma', 240, 'Jim Ottaviani', 15, 18, 'https://imagessl5.casadellibro.com/a/l/t7/15/9788441541115.jpg'),
+('La casa de los espiritus', 350, 'Isabel Allende', 13, 21, 'https://images-na.ssl-images-amazon.com/images/I/81Q1z5jXcfL.jpg'),
+('La Metamorfosis', 128, 'Franz Kafka', 18, 16, 'https://images-na.ssl-images-amazon.com/images/I/81B6ebdgtZL.jpg'),
+('Los tres bandidos', 230, 'Tomi Ungerer', 3, 24, 'https://biblioabrazo.files.wordpress.com/2010/08/bandidos2.jpg'),
+('Peppa pig En el acuario', 32, 'Hasbro', 15, 30, 'https://images-na.ssl-images-amazon.com/images/I/81jXaU9KgzL.jpg'),
+('Python Playground', 327, 'Mahesh venkitachalam', 12, 15, 'https://m.media-amazon.com/images/I/51296rvlbqL.jpg'),
+('Teo va a la piscina', 45, 'Violeta Denou', 25, 15, 'https://images-na.ssl-images-amazon.com/images/I/81+QZVTtmKL.jpg');
 
 -- --------------------------------------------------------
 

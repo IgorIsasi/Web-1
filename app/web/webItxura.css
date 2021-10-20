@@ -16,9 +16,10 @@ img{
     transition: 0.3s;
     width: auto;
     float: left;
-    
+    align-content: center;
 
 }
+
 
 .liburuTxartela:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -27,9 +28,10 @@ img{
 
 .liburutegia{
     display: grid;
-    grid-gap:10px;
+    grid-gap:30px;
     grid-template-columns: auto auto auto auto auto ;
-    padding: 50px;
+    padding: 100px;
+    text-align: center;
 }
 
 
@@ -37,6 +39,7 @@ img{
 .liburuDatuak{
     padding: 2px 16px;
     height: 130px;
+    
 }
 
 
