@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: db
--- Generation Time: Oct 18, 2021 at 05:12 PM
--- Server version: 10.6.4-MariaDB-1:10.6.4+maria~focal
--- PHP Version: 7.4.20
+-- Servidor: db
+-- Tiempo de generación: 20-10-2021 a las 16:26:32
+-- Versión del servidor: 10.6.4-MariaDB-1:10.6.4+maria~focal
+-- Versión de PHP: 7.4.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `database`
+-- Base de datos: `database`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `liburua`
+-- Estructura de tabla para la tabla `liburua`
 --
 
 CREATE TABLE `liburua` (
@@ -32,58 +32,56 @@ CREATE TABLE `liburua` (
   `orriKop` int(11) NOT NULL,
   `egilea` varchar(40) NOT NULL,
   `kopurua` int(11) NOT NULL,
-  `prezioa` double DEFAULT NULL,
-  `irudia` text DEFAULT NULL
+  `prezioa` int(11) NOT NULL,
+  `irudia` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `liburua`
+-- Volcado de datos para la tabla `liburua`
 --
 
 INSERT INTO `liburua` (`izena`, `orriKop`, `egilea`, `kopurua`, `prezioa`, `irudia`) VALUES
-('La Metamorfosis', 128, 'Franz Kafka', 18, 16, 'LaMetamorfosis.jpg');
+('El Último Trabajo Del Señor Luna', 248, 'Cesar Mallorquí', 12, 20, 'https://imagessl8.casadellibro.com/a/l/t7/98/9788423676798.jpg'),
+('La Metamorfosis', 128, 'Franz Kafka', 18, 16, 'https://images-na.ssl-images-amazon.com/images/I/81B6ebdgtZL.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
 CREATE TABLE `usuarios` (
-  `erabiltzailea` varchar(50) NOT NULL,
-  `izenAbizena` varchar(50) NOT NULL,
-  `email` text NOT NULL,
-  `nan` varchar(9) NOT NULL,
+  `NAN` varchar(9) NOT NULL,
+  `izena` text NOT NULL,
+  `abizenak` text NOT NULL,
+  `telefonoa` int(9) NOT NULL,
   `jaiotzeData` date NOT NULL,
-  `Pasahitza` varchar(50) NOT NULL,
-  `telefonoa` int(9) NOT NULL
+  `email` text NOT NULL,
+  `pasahitza` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`erabiltzailea`, `izenAbizena`, `email`, `nan`, `jaiotzeData`, `Pasahitza`, `telefonoa`) VALUES
-('Markel', 'Markel Rubiños', 'markelmontejo@gmail.com', '20975528B', '2001-09-04', '123123', 667261029);
+INSERT INTO `usuarios` (`NAN`, `izena`, `abizenak`, `telefonoa`, `jaiotzeData`, `email`, `pasahitza`) VALUES
+('20975528B', 'Markel', 'Rubinos', 667261029, '2021-10-07', 'markelmontejo@gmail.com', '11111111');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `liburua`
+-- Indices de la tabla `liburua`
 --
 ALTER TABLE `liburua`
   ADD PRIMARY KEY (`izena`,`egilea`);
 
 --
--- Indexes for table `usuarios`
+-- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`erabiltzailea`),
-  ADD UNIQUE KEY `nan` (`nan`),
-  ADD UNIQUE KEY `telefonoa` (`telefonoa`),
-  ADD UNIQUE KEY `email` (`email`) USING HASH;
+  ADD PRIMARY KEY (`NAN`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
