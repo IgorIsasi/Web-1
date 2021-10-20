@@ -8,6 +8,8 @@ h1 {
     text-align: center;
 }
 
+
+
 .liburutegia {
     display:-moz-grid;
 }
@@ -28,6 +30,15 @@ h1 {
 .textua {
     background-color: gray;
 }
+
+.liburuIrudia{
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px;
+    width: 150px;
+    max-width: 30%;
+}
+
 
 .izena {
     font-size: larger;

@@ -18,8 +18,7 @@
                 ?>
                 <div class="liburua">
                     <tr>
-                        
-                        <td><img src="<?php echo ("../irudiak/".$row['irudia']); ?>" class = "irudia"></td>
+                        <img class="liburuIrudia" src="<?php echo $row['irudia']?>" width="100" > 
                     </tr>
                     <div class = "textua">
                         <p class = "izena"><?php echo $row['izena']; ?></p>
