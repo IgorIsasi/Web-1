@@ -6,8 +6,7 @@
         <title> Liburuen katalogoa </title>
     </head>
     <body>
-        <div class="atzekoPlanoa">
-        <h1> Liburuen katalogoa </h1>
+        <h1 class="izenburua"> Liburuen katalogoa </h1>
     <div class = "liburutegia">
     <?php
         include '../config.php';
@@ -18,7 +17,9 @@
             while ($row = mysqli_fetch_array($query)) {
                 ?>
                 <div class="liburuTxartela">
-                    <img src="<?php echo $row['irudia']?>"> 
+                    <div class="liburuIrudia">
+                        <img src="<?php echo $row['irudia']?>"> 
+                    </div>
                     <div class="liburuDatuak">
                         <div class="izenaEgilea">
                             <p class="liburuIzena"><b><?php echo $row['izena']; ?></b><p>
@@ -29,7 +30,7 @@
                                 Stock: <?php echo($row['kopurua']);?> 
                             </div>
                             <div class="prezioa">
-                                <?php echo ($row['prezioa']); ?>€
+                                <p><?php echo ($row['prezioa']); ?>€<p>
                             </div>
                         </div>  
                         <div class="botoiak">
@@ -48,7 +49,6 @@
         <div class = "liburuaEzabatu"><input type="button" value = "Liburua ezabatu" onclick = "location.href = 'liburuaEzabatu.html'"></div>
         <div class = "liburuaErreserbatu"><input type="button" value = "Liburua erreserbatu" onclick = "location.href = 'liburuaErreserbatu.html'"></div>
         <div class = "sesioaItxi"><input type="button" value = "Sesioa itxi" onclick = "location.href = '../index.html'"></div>
-    </div>
     </div>
         </body>
             
