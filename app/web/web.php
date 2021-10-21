@@ -6,6 +6,7 @@
         <title> Liburuen katalogoa </title>
     </head>
     <body>
+        <div class="atzekoPlanoa">
         <h1> Liburuen katalogoa </h1>
     <div class = "liburutegia">
     <?php
@@ -19,9 +20,24 @@
                 <div class="liburuTxartela">
                     <img src="<?php echo $row['irudia']?>"> 
                     <div class="liburuDatuak">
-                        <h4><b><?php echo $row['izena']; ?></b></h4>
-                        <p><?php echo ($row['egilea']); ?></p>
-                    </div>
+                        <div class="izenaEgilea">
+                            <p class="liburuIzena"><b><?php echo $row['izena']; ?></b><p>
+                            <p><?php echo ($row['egilea']); ?></p>
+                        </div>
+                        <div class="prezioaStock">
+                             <div class="stock">
+                                Stock: <?php echo($row['kopurua']);?> 
+                            </div>
+                            <div class="prezioa">
+                                <?php echo ($row['prezioa']); ?>€
+                            </div>
+                        </div>  
+                        <div class="botoiak">
+                            <input class="botoia" type="button" value="Erreserbatu">
+                        </div>                            
+                        </div>
+                    
+                    
                 </div> 
         <?php
             }
@@ -32,6 +48,7 @@
         <div class = "liburuaEzabatu"><input type="button" value = "Liburua ezabatu" onclick = "location.href = 'liburuaEzabatu.html'"></div>
         <div class = "liburuaErreserbatu"><input type="button" value = "Liburua erreserbatu" onclick = "location.href = 'liburuaErreserbatu.html'"></div>
         <div class = "sesioaItxi"><input type="button" value = "Sesioa itxi" onclick = "location.href = '../index.html'"></div>
+    </div>
     </div>
         </body>
             

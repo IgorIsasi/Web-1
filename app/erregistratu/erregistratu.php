@@ -1,3 +1,7 @@
+<?php //Para evitar que de problemas con el header
+ob_start();
+?>
+
 
 <?php
 
@@ -21,4 +25,8 @@ if (mysqli_query($conn, $sql)) {
   }
   
 
+?>
+
+<?php //Para evitar que de problemas con el header
+ob_end_flush();
 ?>
