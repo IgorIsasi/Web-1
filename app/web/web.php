@@ -5,10 +5,19 @@
         <title> Liburuen katalogoa </title>
         <script type="text/javascript" src="liburuaErreserbatu.js"></script>
     </head>
+
     <body>
-        <h1 class="izenburua"> Liburuen katalogoa </h1>
+    <?php $email=$_GET['email']?>
+    <ul>
+        <li><a class="active" href="#home">Nire liburuak</a></li>
+        <li><a href="#home">Liburu katalogoa</a></li>
+        <li style="float:right"><a class="active" href="#about"><?php echo $email?></a></li>
+    </ul>
+    
     <div class = "liburutegia">
+    
     <?php
+
         include '../config.php';
 
         $query = mysqli_query($conn, "SELECT * FROM liburua")
@@ -44,6 +53,7 @@
             }
         ?>
     </div>
+
     <div>
         <div class = "liburuaSartu" ><input type="button" value = "Liburua sartu" onclick = "location.href = 'liburuaSartu.html'"></div>
         <div class = "liburuaEzabatu"><input type="button" value = "Liburua ezabatu" onclick = "location.href = 'liburuaEzabatu.html'"></div>

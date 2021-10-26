@@ -7,18 +7,37 @@ body{
     background-image: url("../img/atzekoplanoa.jpg");
 }
 
-.izenburua{
+ul {
+    display: grid;
+    grid-template-columns: 15% auto 15%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    
+  }
+  
+li {
+    float: left;
+  }
+  
+li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 25px 16px;
+    text-decoration: none;
+  }
+
+  
+li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+.active {
     background-color: #fff050;
-    height: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-
-
-
+    color: #333;
+  }
 
 img{
     width: 280px;
@@ -34,7 +53,7 @@ img{
     width: 300px;
     float: left;
     align-content: center;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 
 }
 
@@ -117,7 +136,7 @@ img{
     display: grid;
     grid-gap:30px;
     grid-template-columns: auto auto auto auto auto ;
-    padding: 100px;
+    padding: 50px;
     text-align: center;
 }
 
