@@ -1,13 +1,13 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="webItxura.css">
         <title> Liburuen katalogoa </title>
-        <script type="text/javascript" src="liburuaErreserbatu.js"></script>
     </head>
 
     <body>
-    <?php $email=$_GET['email']?>
+    <?php $email=$_SESSION['email']?>
     <ul>
         <li><a class="active" href="#home">Nire liburuak</a></li>
         <li><a href="#home">Liburu katalogoa</a></li>
@@ -17,7 +17,6 @@
     <div class = "liburutegia">
     
     <?php
-
         include '../config.php';
 
         $query = mysqli_query($conn, "SELECT * FROM liburua")
@@ -43,7 +42,13 @@
                             </div>
                         </div>  
                         <div class="botoiak">
-                            <input class="botoia" type="button" value="Erreserbatu" onclick="erreserbatu('<?php echo ($row['izena']); ?>', '<?php echo ($row['egilea']); ?>')">
+                            <?php
+                            ?>
+                            <form method="post" action="liburuaErreserbatu.php">
+                                <input class="botoia" type="submit" value="Erreserbatu">
+                                <input type='hidden' name='izena' value='<?php echo $row['izena']; ?>'>
+                                <input type='hidden' name='egilea' value='<?php echo $row['egilea']; ?>'>
+                            </form>                        
                         </div>                            
                         </div>
                     
@@ -57,9 +62,8 @@
     <div>
         <div class = "liburuaSartu" ><input type="button" value = "Liburua sartu" onclick = "location.href = 'liburuaSartu.html'"></div>
         <div class = "liburuaEzabatu"><input type="button" value = "Liburua ezabatu" onclick = "location.href = 'liburuaEzabatu.html'"></div>
-        <div class = "liburuaErreserbatu"><input type="button" value = "Liburua erreserbatu" onclick = "location.href = 'liburuaErreserbatu.html'"></div>
-        <div class = "erreserbakIkusi"><input type="button" value = "Erreserbak ikusi" onclick = "location.href = 'erreserbakIkusi.php'"></div>
-        <div class = "sesioaItxi"><input type="button" value = "Sesioa itxi" onclick = "location.href = '../index.html'"></div>
+        <div class = "erreserbakKudeatu"><input type="button" value = "Erreserbak kudeatu" onclick = "location.href = 'erreserbakKudeatu.php'"></div>
+        <div class = "sesioaItxi"><input type="button" value = "Sesioa itxi" onclick = "location.href = 'sesioaItxi.php'"></div>
     </div>
         </body>
             
