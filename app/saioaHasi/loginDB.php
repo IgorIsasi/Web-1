@@ -8,7 +8,7 @@ ob_start();
   $emaitza = mysqli_query($conn,"SELECT * FROM usuarios WHERE email = '$email' AND pasahitza = '$pasahitza'");
   $zutabekop= mysqli_num_rows($emaitza);
 if($zutabekop > 0){
-  header('Location: ../web/web.php?email=' . $_POST['email']);
+  header('Location: ../web/web.php');
   
 }else{
   header('Location: index.html');

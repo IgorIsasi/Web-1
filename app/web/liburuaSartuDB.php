@@ -11,6 +11,6 @@
         "INSERT INTO liburua (izena, egilea, orriKop, prezioa, kopurua, irudia) 
         VALUES ('$izena', '$egilea', $orriKop, $prezioa, $stock, '$irudia')")
         or die (mysqli_error($conn));
-        header('Location: liburuaSartu.html');
+        header('Location: web.php');
     
 ?>

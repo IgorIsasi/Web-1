@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Oct 25, 2021 at 05:23 PM
+-- Generation Time: Oct 27, 2021 at 05:17 PM
 -- Server version: 10.6.4-MariaDB-1:10.6.4+maria~focal
 -- PHP Version: 7.4.20
 
@@ -33,13 +33,6 @@ CREATE TABLE `erreserba` (
   `erabEmail` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `erreserba`
---
-
-INSERT INTO `erreserba` (`liburuIzena`, `liburuEgilea`, `erabEmail`) VALUES
-('Enigma', 'Jim Ottaviani', 'markelmontejo@gmail.com');
-
 -- --------------------------------------------------------
 
 --
@@ -51,7 +44,7 @@ CREATE TABLE `liburua` (
   `orriKop` int(11) NOT NULL,
   `egilea` varchar(40) NOT NULL,
   `kopurua` int(11) NOT NULL,
-  `prezioa` int(11) NOT NULL,
+  `prezioa` double NOT NULL,
   `irudia` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -93,6 +86,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`NAN`, `izena`, `abizenak`, `telefonoa`, `jaiotzeData`, `email`, `pasahitza`) VALUES
+('00000000A', 'Admin', 'Istratzaile', 0, '0001-01-01', 'admin@gmail.com', 'testadmin'),
 ('11112222A', 'Iker', 'Etxebarria', 123456789, '1111-11-11', 'ietxebarria@h.h', '123123123'),
 ('20975528B', 'Markel', 'Rubinos', 667261029, '2021-10-07', 'markelmontejo@gmail.com', '11111111');
 
@@ -104,8 +98,8 @@ INSERT INTO `usuarios` (`NAN`, `izena`, `abizenak`, `telefonoa`, `jaiotzeData`, 
 -- Indexes for table `erreserba`
 --
 ALTER TABLE `erreserba`
-  ADD KEY `erabEmail` (`erabEmail`),
-  ADD KEY `liburuIzena` (`liburuIzena`,`liburuEgilea`);
+  ADD PRIMARY KEY (`liburuIzena`,`liburuEgilea`,`erabEmail`),
+  ADD KEY `erabEmail` (`erabEmail`);
 
 --
 -- Indexes for table `liburua`

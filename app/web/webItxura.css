@@ -51,11 +51,10 @@ img{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 300px;
-    height: fit-content;
+    height: 735px;
     float: left;
     align-content: center;
     background-color: rgb(255, 255, 255);
-
 }
 
 .liburuIzena{
@@ -64,8 +63,8 @@ img{
     
 }
 
-.botoia {
-    background-color: black; /* Green */
+.botoiaErreserbatu {
+    background-color: black;
     border: none;
     color: white;
     padding: 10px 32px;
@@ -76,14 +75,124 @@ img{
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
-    border-radius: 8px;
-
-    
+    border-radius: 8px;    
 }
 
-.botoia:hover{
+.botoiaErreserbatu:hover{
     background:white;
     color: black;
+}
+
+.botoiaEzabatu {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;    
+}
+
+.botoiaEzabatu:hover{
+    background:white;
+    color: black;
+}
+
+.botoiaStock {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 40px;
+    margin-right: 0px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;    
+}
+
+.botoiaStock:hover{
+    background:white;
+    color: black;
+}
+
+.stockForm{
+    float: right;
+    width: 40px;
+    margin-left: 0%;
+    margin-top: 14px;
+}
+
+.botoiaSartu{
+    background-color: yellow;
+    border: none;
+    color: black;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    float: left;
+    font-size: 16px;
+    margin: 8px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.botoiaSartu:hover{
+    background:black;
+    color: yellow;
+}
+
+.botoiaErreserbak{
+    background-color: yellow;
+    border: none;
+    color: black;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    float: left;
+    font-size: 16px;
+    margin: 8px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;    
+}
+
+.botoiaErreserbak:hover{
+    background:black;
+    color: yellow;
+}
+
+.botoiaSaioa{
+    background-color: yellow;
+    border: none;
+    color: black;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    float: left;
+    font-size: 16px;
+    margin: 8px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+        
+}
+
+.botoiaSaioa:hover{
+    background:black;
+    color: yellow;
 }
 
 .prezioa{
