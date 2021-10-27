@@ -42,17 +42,20 @@
                             </div>
                         </div>  
                         <div class="botoiak">
-                            <?php
-                            ?>
                             <form method="post" action="liburuaErreserbatu.php">
                                 <input class="botoia" type="submit" value="Erreserbatu">
                                 <input type='hidden' name='izena' value='<?php echo $row['izena']; ?>'>
                                 <input type='hidden' name='egilea' value='<?php echo $row['egilea']; ?>'>
-                            </form>                        
+                            </form>
+                            <?php if ($_SESSION['email'] == 'admin@gmail.com'){ ?>
+                                <form method="post" action="liburuaEzabatu.php">
+                                <input class="botoia" type="submit" value="Ezabatu">
+                                <input type='hidden' name='izena' value='<?php echo $row['izena']; ?>'>
+                                <input type='hidden' name='egilea' value='<?php echo $row['egilea']; ?>'>
+                            </form>
+                            <?php } ?>                        
                         </div>                            
-                        </div>
-                    
-                    
+                    </div>
                 </div> 
         <?php
             }
@@ -61,10 +64,8 @@
 
     <div>
         <div class = "liburuaSartu" ><input type="button" value = "Liburua sartu" onclick = "location.href = 'liburuaSartu.html'"></div>
-        <div class = "liburuaEzabatu"><input type="button" value = "Liburua ezabatu" onclick = "location.href = 'liburuaEzabatu.html'"></div>
         <div class = "erreserbakKudeatu"><input type="button" value = "Erreserbak kudeatu" onclick = "location.href = 'erreserbakKudeatu.php'"></div>
         <div class = "sesioaItxi"><input type="button" value = "Sesioa itxi" onclick = "location.href = 'sesioaItxi.php'"></div>
     </div>
-        </body>
-            
+    </body>     
 </html>
