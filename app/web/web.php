@@ -56,13 +56,13 @@
                                     <input type='hidden' name='izena' value='<?php echo $row['izena']; ?>'>
                                     <input type='hidden' name='egilea' value='<?php echo $row['egilea']; ?>'>
                                 </form>
-                            <?php } ?>
                                 <form method="post" action="stockEguneratu.php">
                                     <input class="botoiaStock" type="submit" value="Stock eguneratu">
                                     <input class="stockForm" type="number" name='stock' min="0">
                                     <input type='hidden' name='izena' value='<?php echo $row['izena']; ?>'>
                                     <input type='hidden' name='egilea' value='<?php echo $row['egilea']; ?>'>
-                                </form>                        
+                                </form>
+                            <?php } ?>                        
                         </div>                            
                     </div>
                 </div> 
