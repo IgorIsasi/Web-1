@@ -14,7 +14,7 @@ $sql = "INSERT INTO `usuarios`(`izena`,`abizenak`, `nan`, `jaiotzeData`, `pasahi
 VALUES ('$izena', '$abizenak','$nan','$jaiotzeData','$pasahitza','$telefonoa','$email')";
 
 if (mysqli_query($conn, $sql)) {
-    header('Location:../saioaHasi/');
+    header('Location:../saioaHasi/login.html');
   } else{
     printf("Errormessage: %s\n", $conn->error);
   }
