@@ -32,11 +32,11 @@ tr:hover{
     display: grid;
 }
 
-.ezabatuBotoia{
+.ezabatuBotoia,.bueltatuBotoia{
     background-color: #212121;
     border: none;
     color: white;
-    padding: 10px 32px;
+    padding: 7px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -47,7 +47,7 @@ tr:hover{
     border-radius: 8px; 
 }
 
-.ezabatuBotoia:hover{
+.ezabatuBotoia:hover,.bueltatuBotoia:hover{
     background-color:#fff050 ;
     color: black;
 }

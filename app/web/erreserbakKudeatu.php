@@ -46,7 +46,7 @@
         }
         ?>
         </table>
-        <input class="bueltatuBotoia" type="button" value = "Katalogora bueltatu" onclick = "location.href = 'web.php'">
+        <input class="bueltatuBotoia" type="button" value = "Bueltatu" onclick = "location.href = 'web.php'">
     </body>
 </html>
 

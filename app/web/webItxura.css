@@ -63,10 +63,10 @@ img{
 }
 
 .botoiaErreserbatu {
-    background-color: black;
+    background-color: #212121;
     border: none;
     color: white;
-    padding: 10px 32px;
+    padding: 7px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -85,8 +85,8 @@ img{
 .botoiaBueltatu {
     background-color: #fff050;
     border: none;
-    color: black;
-    padding: 10px 32px;
+    color: #212121;
+    padding: 7px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -94,7 +94,7 @@ img{
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
-    border-radius: 8px;    
+    border-radius: 8px;  
 }
 .botoiaBueltatu:hover{
     background:white;
@@ -255,9 +255,7 @@ img{
     background-color: #d5d5d5; 
   }
 
-.liburuTxartela:hover .prezioa {
-    background-color: white; 
-  }
+
 
 
   
