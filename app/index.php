@@ -1,3 +1,7 @@
+<?php
+session_abort();
+?>
+
 <html>
     <head>
 

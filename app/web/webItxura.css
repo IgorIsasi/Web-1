@@ -77,6 +77,11 @@ img{
     border-radius: 8px;    
 }
 
+.botoiaErreserbatu:hover{
+    background:white;
+    color: black;
+}
+
 .botoiaBueltatu {
     background-color: rgb(255, 52, 52);
     border: none;
@@ -91,11 +96,12 @@ img{
     cursor: pointer;
     border-radius: 8px;    
 }
-
-.botoiaErreserbatu:hover{
+.botoiaBueltatu:hover{
     background:white;
     color: black;
 }
+
+
 
 .botoiaEzabatu {
     background-color: black;
