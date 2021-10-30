@@ -11,5 +11,5 @@
     $query = mysqli_query($conn, "UPDATE liburua SET kopurua = kopurua-1 WHERE izena = '$izena' AND egilea = '$egilea'")
         or die (mysqli_error($conn));
 
-    header('Location: erreserbakKudeatu.php');
+    header('Location: web.php');
 ?>
