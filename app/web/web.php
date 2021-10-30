@@ -34,7 +34,7 @@
     
     <?php
         include '../config.php';
-
+        $_SESSION['url']=$_SERVER['PHP_SELF'];
         $query = mysqli_query($conn, "SELECT * FROM liburua");
         
         
@@ -58,7 +58,7 @@
                         </div>
                         <div class="prezioaStock">
                              <div class="stock">
-                                Stock: <?php echo($egilea);?> 
+                                Stock: <?php echo($kopurua);?> 
                             </div>
                             <div class="prezioa">
                                 <p><?php echo ($prezioa); ?>€<p>
