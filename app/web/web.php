@@ -23,10 +23,10 @@
         <li><a class="active" href="erreserbakKudeatu.php">Nire liburuak</a></li>
         <li><a>Liburu katalogoa</a></li>
         <?php if (isset($_SESSION['email'])){ ?> 
-            <li style="float:right"><a class="active"><?php echo $email?></a></li>
+            <li style="float:right"><a href="../datuakAldatu/datuakAldatu.php" class="active"><?php echo $email?></a></li>
         <?php }
         else{ ?>
-            <li style="float:right"><a class="active" href="#about" onclick="location.href='../saioaHasi/login.html'">Saioa hasi</a></li>
+            <li style="float:right"><a class="active" href="../saioaHasi/login.html" ">Saioa hasi</a></li>
        <?php } ?>
     </ul>
     
