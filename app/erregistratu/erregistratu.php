@@ -8,10 +8,11 @@ $telefonoa = $_POST['telefonoa'];
 $jaiotzeData = $_POST['jaiotzeData'];
 $email = $_POST['email'];
 $pasahitza = $_POST['pasahitza'];
+$admin=0;
 
 
-$sql = "INSERT INTO `usuarios`(`izena`,`abizenak`, `nan`, `jaiotzeData`, `pasahitza`, `telefonoa`, `email`) 
-VALUES ('$izena', '$abizenak','$nan','$jaiotzeData','$pasahitza','$telefonoa','$email')";
+$sql = "INSERT INTO `usuarios`(`izena`,`abizenak`, `nan`, `jaiotzeData`, `pasahitza`, `telefonoa`, `email`,`admin`) 
+VALUES ('$izena', '$abizenak','$nan','$jaiotzeData','$pasahitza','$telefonoa','$email','$admin')";
 
 if (mysqli_query($conn, $sql)) {
     header('Location:../saioaHasi/login.html');

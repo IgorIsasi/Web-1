@@ -5,9 +5,14 @@ ob_start();
   session_start();
   $email = $_POST['email'];
   $_SESSION['email'] = $email;
+
   $pasahitza = $_POST['pasahitza'];
   $emaitza = mysqli_query($conn,"SELECT * FROM usuarios WHERE email = '$email' AND pasahitza = '$pasahitza'");
   $zutabekop= mysqli_num_rows($emaitza);
+  while($row=mysqli_fetch_array($emaitza)){
+    $admin=$row['admin'];
+  }
+  $_SESSION['admin']=$admin;
 
 if($zutabekop > 0){
   header('Location: ../web/web.php');

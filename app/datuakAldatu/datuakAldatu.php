@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +10,12 @@
     <title>Datuak aldatu</title>
 </head>
 <body>
-    <form name="formulario" class="formulario" id="formulario" method="post" action="erregistratu.php">
+	
+    <form name="formulario" class="formulario" id="formulario" method="post" action="datuBerriakBidali.php">
     <?php
+		
         include '../config.php';
-        session_start();
+        
         $email=$_SESSION['email'];
         $query = mysqli_query($conn, "SELECT * FROM usuarios WHERE email='$email'");
         while ($row = mysqli_fetch_array($query)) {
@@ -22,6 +25,7 @@
                 $telefonoa=$row['telefonoa'];
                 $jaiotzeData=$row['jaiotzeData'];
                 $pasahitza=$row['pasahitza'];
+				$admin=$row['admin'];
         ?>
             <div class="formulario__grupo" id="grupo__izena">
 				<label for="izena" class="formulario__label">Izena</label>
@@ -76,7 +80,7 @@
 			<div class="formulario__grupo" id="grupo__email">
 				<label for="email" class="formulario__label">Email</label>
 				<div class="formulario__grupo-input">
-					<input type="email" class="formulario__input" name="email" id="email" value=<?php echo $email?>>
+					<input type="email" class="formulario__input" name="email" id="email" value=<?php echo $email?> disabled>
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
 				<p class="formulario__input-error">Hori ez da email baten formatua</p>
@@ -92,7 +96,7 @@
 				<p class="formulario__input-error">Telefono zenbakiak 9 digitu izan behar ditu soilik.</p>
 			</div>
 			<div class="formulario__mensaje" id="formulario__mensaje">
-				<p><i class="fas fa-exclamation-triangle"></i> <b>Errorea:</b> Mezedez hutsune guztiak bete</p>
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Ederto!</b> Zure datuak aldatu dira!</p>
 			</div>
 
 			<div class="formulario__grupo formulario__grupo-btn-enviar">

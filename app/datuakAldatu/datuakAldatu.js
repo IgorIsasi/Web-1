@@ -12,14 +12,14 @@ const espresioak={
 }
 
 const hutsuneenEgoera={
-    izena:false,
-    abizenak:false,
-    jaiotzeData:false,
-    nan:false,
-    pasahitza:false,
-    pasahitza2:false,
-    email:false,
-    telefonoa:false
+    izena:true,
+    abizenak:true,
+    jaiotzeData:true,
+    nan:true,
+    pasahitza:true,
+    pasahitza2:true,
+    email:true,
+    telefonoa:true
 
 }
 
@@ -31,7 +31,7 @@ const erregistroaOnartu=(e)=>{
         case "abizenak":
             hutsuneaOnartu(espresioak.abizenak, e.target, 'abizenak');
         break;        
-        case "NAN":
+        case "nan":
             hutsuneaOnartu(espresioak.nan, e.target, 'nan');
         break;
         case "pasahitza":
@@ -53,7 +53,6 @@ const erregistroaOnartu=(e)=>{
 
 
 
-
 const hutsuneaOnartu=(expresion,input,campo)=>{
     if(expresion.test(input.value)){
         document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
@@ -72,7 +71,6 @@ const hutsuneaOnartu=(expresion,input,campo)=>{
     }
 }
 
-
 inputs.forEach((input)=>{ 
     //Zerbai input batean aldatzen bada validarFormulario() funtzioa
     //exekutatuko da. Baita input-aren kanpoan klik egiten bada.
@@ -82,18 +80,9 @@ inputs.forEach((input)=>{
 })
 
 formulario.addEventListener('submit', (e)=>{ // Lo que se activa cuando el formulario es enviado //Para evitar que sea enviado
-    inputs.forEach((input)=>{
-        erregistroaOnartu(input);
-    })
     if(hutsuneenEgoera.izena && hutsuneenEgoera.abizenak && hutsuneenEgoera.jaiotzeData && hutsuneenEgoera.nan && 
         hutsuneenEgoera.pasahitza && hutsuneenEgoera.pasahitza2 && hutsuneenEgoera.email && hutsuneenEgoera.telefonoa){
-            document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-            setTimeout(()=>{
-                document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-                document.querySelectorAll('.formulario__grupo-correcto').forEach((icono)=>{
-                    icono.classList.remove('formulario__grupo-correcto');
-                })
-            }, 1500);
+
         hutsuneenEgoera.izena=false;
         hutsuneenEgoera.abizenak=false;
         hutsuneenEgoera.jaiotzeData=false;
@@ -103,11 +92,11 @@ formulario.addEventListener('submit', (e)=>{ // Lo que se activa cuando el formu
         hutsuneenEgoera.email=false;
         hutsuneenEgoera.telefonoa=false;
     
-        document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
         
     }else{
-        e.preventDefault();
-        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+        e.preventDefault();      
+        document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-exito');
+        
         
     }
 })
