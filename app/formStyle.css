@@ -46,6 +46,18 @@ a{
 	transition: .3s ease all;
 }
 
+.botoiak-hasiSaioa{
+	width: 100%;
+	align-items: center;
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto auto auto;
+	padding: 10px;
+	position: relative;
+	margin: 10px;
+
+}
+
 .formulario__input:focus {
 	border: 3px solid #0075FF;
 	outline: none;
@@ -106,6 +118,7 @@ a{
 }
 
 .formulario__btn {
+	position: static;
 	height: 35px;
 	line-height: 35px;
 	width: 30%;
@@ -116,6 +129,13 @@ a{
 	border-radius: 3px;
 	cursor: pointer;
 	transition: .1s ease all;
+	align-items: center;
+	margin: 5px;
+}
+
+.formulario__btn:hover {
+	background-color: #E5E5E5;
+	color: rgb(26, 26, 26);
 }
 
 .formulario__btn:hover {

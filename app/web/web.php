@@ -3,6 +3,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="webItxura.css">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
         <title> Liburuen katalogoa </title>
     </head>
 
@@ -19,20 +20,33 @@
     </script>
     
     <?php 
-    $email=$_SESSION['email'];
-    $admin=$_SESSION['admin'];
+    if(isset($_SESSION['email']) && isset($_SESSION['admin']) && isset($_SESSION['izena'])){
+        $email=$_SESSION['email'];
+        $admin=$_SESSION['admin'];
+        $izena=$_SESSION['izena'];
+    }
+    
     ?>
 
     <ul>
-        <li><a class="active" href="erreserbakKudeatu.php">Nire liburuak</a></li>
+        <li><a class="active" href="erreserbakKudeatu.php">Nire liburuak  <i class="fas fa-book"></i></a> </li>
         <li><a>Liburu katalogoa</a></li>
         <?php if (isset($_SESSION['email'])){ ?> 
-            <li style="float:right"><a href="../datuakAldatu/datuakAldatu.php" class="active"><?php echo $email?></a></li>
+            <li style="float:right"><a href="../datuakAldatu/datuakAldatu.php" class="active"><?php echo $izena."  "?><i style='font-size:18px' class='fas'>&#xf406;</i></a></li>
         <?php }
         else{ ?>
-            <li style="float:right"><a class="active" href="../saioaHasi/login.html" ">Saioa hasi</a></li>
+            <li style="float:right"><a class="active-verde" href="../saioaHasi/login.html" ">Saioa hasi</a></li>
        <?php } ?>
     </ul>
+
+    <?php if (isset($_SESSION['email'])){ ?>
+            <div class="botoiak">
+            <?php if ($admin==1){ ?>
+            <input class="botoia" type="button" value = "Liburua sartu" onclick = "location.href = 'liburuaSartu.html'">
+            <?php } ?>
+            <input class="botoia" type="button" value = "Saioa itxi" onclick = "location.href = 'sesioaItxi.php'">
+            </div>
+    <?php } ?>
     
     <div class = "liburutegia">
     
@@ -73,10 +87,10 @@
                         $query2=mysqli_query($conn, "SELECT * FROM erreserba WHERE liburuIzena='$izena' && liburuEgilea='$egilea' && erabEmail='$email'") or die (mysqli_error($conn));
                         $erreserbatuDu=mysqli_num_rows($query2);
                         ?>
-                        <div class="botoiak">
+                        <div class="botoiak-admin">
                             <?php if ($erreserbatuDu == 0){ ?>
                                 <form method="post" action="liburuaErreserbatu.php">
-                                    <input class="botoiaErreserbatu" type="submit" value="Erreserbatu">
+                                    <input class="botoia" type="submit" value="Erreserbatu">
                                     <input type='hidden' name='izena' value='<?php echo $izena; ?>'>
                                     <input type='hidden' name='egilea' value='<?php echo $egilea; ?>'>
                                     <input type='hidden' name='kopurua' value='<?php echo $egilea; ?>'>
@@ -84,21 +98,21 @@
                             <?php }
                             else{ ?>
                                 <form method="post" action="erreserbaEzabatu.php">
-                                    <input class="botoiaBueltatu" type="submit" value="Bueltatu">
+                                    <input class="botoia-horia" type="submit" value="Bueltatu">
                                     <input type='hidden' name='izena' value='<?php echo $izena; ?>'>
                                     <input type='hidden' name='egilea' value='<?php echo $egilea; ?>'>
                                     <input type='hidden' name='kopurua' value='<?php echo $egilea; ?>'>
                                 </form>
                             <?php } ?>
                             <?php if ($admin == 1){ ?>
-                                <form method="post" action="liburuaEzabatu.php">
-                                    <input class="botoiaEzabatu" type="submit" value="Ezabatu">
+                                <form method="post" action="stockEguneratu.php">
+                                    <input class="botoia-zuria" type="number" name='stock' min="0" placeholder="Sartu stock berria">
+                                    <input class="botoia-berdea" type="submit" value="✓" >
                                     <input type='hidden' name='izena' value='<?php echo $izena; ?>'>
                                     <input type='hidden' name='egilea' value='<?php echo $egilea; ?>'>
                                 </form>
-                                <form method="post" action="stockEguneratu.php">
-                                    <input class="botoiaStock" type="submit" value="Stock eguneratu">
-                                    <input class="stockForm" type="number" name='stock' min="0">
+                                <form method="post" action="liburuaEzabatu.php">
+                                    <button class="botoia-gorria" type="submit"><i class="fa fa-trash"></i></button>
                                     <input type='hidden' name='izena' value='<?php echo $izena; ?>'>
                                     <input type='hidden' name='egilea' value='<?php echo $egilea; ?>'>
                                 </form>
@@ -111,13 +125,6 @@
         }
         ?>
     </div>
-    <div>
-        <?php if (isset($_SESSION['email'])){ ?>
-            <?php if ($_SESSION['email'] == 'admin@gmail.com'){ ?>
-                <input class="botoiaSartu" type="button" value = "Liburua sartu" onclick = "location.href = 'liburuaSartu.html'"></div>
-            <?php } ?>
-            <input class="botoiaSaioa" type="button" value = "Saioa itxi" onclick = "location.href = 'sesioaItxi.php'"></div>
-        <?php } ?>
-    </div>
+    
     </body>     
 </html>

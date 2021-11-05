@@ -11,8 +11,10 @@ ob_start();
   $zutabekop= mysqli_num_rows($emaitza);
   while($row=mysqli_fetch_array($emaitza)){
     $admin=$row['admin'];
+    $izena=$row['izena'];
   }
   $_SESSION['admin']=$admin;
+  $_SESSION['izena']=$izena;
 
 if($zutabekop > 0){
   header('Location: ../web/web.php');

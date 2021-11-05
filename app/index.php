@@ -5,6 +5,7 @@ session_abort();
 <html>
     
 <head>
+<link rel="stylesheet" href="formStyle.css">
   <!--Para evitar tener que recargar la caché  -->
   <meta http-equiv="Expires" content="0">
   <meta http-equiv="Last-Modified" content="0">
@@ -14,10 +15,10 @@ session_abort();
 </head>
     <body>
         <h1>Ongi etorri!</h1>
-        <div class="botoiak">
-            <input class="sesioaHasi" type="button" value="Saioa hasi" onclick="location.href= 'saioaHasi/login.html'">
-            <input class="erregistratu" type="button" value="Erregistratu" onclick="location.href= 'erregistratu/erregistroa.html'">
-            <input class="katalogoa" type="button" value="Liburuen katalogoa ikusi" onclick="location.href= 'web/web.php'">
+        <div class="botoiak-hasiSaioa">
+            <button class="formulario__btn" onclick="location.href= 'saioaHasi/login.html'">Saioa hasi</button>
+            <button class="formulario__btn" onclick="location.href= 'erregistratu/erregistroa.html'">Erregistratu</button>
+            <button class="formulario__btn" onclick="location.href= 'web/web.php'">Liburuen katalogoa ikusi</button>
         </div>
     </body>
 </html>
