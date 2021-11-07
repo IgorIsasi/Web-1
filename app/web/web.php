@@ -29,7 +29,12 @@
     ?>
 
     <ul>
-        <li><a class="active" href="erreserbakKudeatu.php">Nire liburuak  <i class="fas fa-book"></i></a> </li>
+        <?php if (isset($_SESSION['email'])){ ?> 
+            <li><a class="active" href="erreserbakKudeatu.php">Nire liburuak  <i class="fas fa-book"></i></a> </li>
+        <?php }
+        else{ ?>
+            <li><a><i></i></a> </li>
+        <?php } ?>
         <li><a>Liburu katalogoa</a></li>
         <?php if (isset($_SESSION['email'])){ ?> 
             <li style="float:right"><a href="../datuakAldatu/datuakAldatu.php" class="active"><?php echo $izena."  "?><i style='font-size:18px' class='fas'>&#xf406;</i></a></li>
@@ -88,7 +93,7 @@
                         $erreserbatuDu=mysqli_num_rows($query2);
                         ?>
                         <div class="botoiak-admin">
-                            <?php if ($erreserbatuDu == 0){ ?>
+                            <?php if ($erreserbatuDu == 0 && $kopurua >= 1){ ?>
                                 <form method="post" action="liburuaErreserbatu.php">
                                     <input class="botoia" type="submit" value="Erreserbatu">
                                     <input type='hidden' name='izena' value='<?php echo $izena; ?>'>
@@ -96,7 +101,7 @@
                                     <input type='hidden' name='kopurua' value='<?php echo $egilea; ?>'>
                                 </form>
                             <?php }
-                            else{ ?>
+                            if ($erreserbatuDu != 0){ ?>
                                 <form method="post" action="erreserbaEzabatu.php">
                                     <input class="botoia-horia" type="submit" value="Bueltatu">
                                     <input type='hidden' name='izena' value='<?php echo $izena; ?>'>
