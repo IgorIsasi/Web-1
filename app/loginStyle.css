@@ -105,6 +105,7 @@ a{
 }
 
 .formulario__btn {
+	
 	height: 35px;
 	line-height: 35px;
 	width: 30%;
@@ -118,6 +119,7 @@ a{
 }
 
 .formulario__btn:hover {
+	background-color: rgb(250, 237, 60);
 	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
 }
 

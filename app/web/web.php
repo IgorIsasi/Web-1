@@ -4,6 +4,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="webItxura.css">
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title> Liburuen katalogoa </title>
     </head>
 
@@ -37,16 +38,16 @@
         else{ ?>
             <li style="float:right"><a class="active-verde" href="../saioaHasi/login.html" ">Saioa hasi</a></li>
        <?php } ?>
-    </ul>
-
-    <?php if (isset($_SESSION['email'])){ ?>
-            <div class="botoiak">
+       <?php if (isset($_SESSION['email'])){ ?>
             <?php if ($admin==1){ ?>
-            <input class="botoia" type="button" value = "Liburua sartu" onclick = "location.href = 'liburuaSartu.html'">
+            <li style="float:right" class="active-verde" type="button" value = "Liburua sartu" onclick = "location.href = 'liburuaSartu.html'"></li>
             <?php } ?>
-            <input class="botoia" type="button" value = "Saioa itxi" onclick = "location.href = 'sesioaItxi.php'">
+            <li><a href="sesioaItxi.php" class="active-oscuro"><i style="font-size:24px" class="fa">&#xf08b;</i></a></li>
             </div>
     <?php } ?>
+    </ul>
+
+   
     
     <div class = "liburutegia">
     
