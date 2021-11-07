@@ -4,12 +4,14 @@ body {
 }
 
 ul {
+    font-size: 22px;
     display: grid;
-    grid-template-columns: 15% auto 15%;
+    grid-template-columns: 15% 70% auto auto ;
     list-style-type: none;
-    margin: 0;
+    margin: 0px;
     padding: 0;
     background-color: #333;
+    height: auto;
 }
 
 li {
@@ -30,9 +32,15 @@ li a {
     color: #333;
 }
 
+.active-oscuro{
+    background-color: #e0d447;
+    color: #333;
+
+}
+
 .active-verde:hover {
     background-color: #e6e6e6;
-    color: rgb(39, 39, 39);
+    color: rgb(211, 211, 211);
 }
 
 
