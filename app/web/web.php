@@ -29,29 +29,30 @@
     
     ?>
 
-    <ul>
-        <?php if (isset($_SESSION['email'])){ ?> 
-            <li><a class="active" href="erreserbakKudeatu.php">Nire liburuak  <i class="fas fa-book"></i></a> </li>
-        <?php }
-        else{ ?>
-            <li><a><i></i></a> </li>
-        <?php } ?>
+<?php if (isset($_SESSION['email'])){ 
+        if($_SESSION['admin']==1){?> 
+        <ul class="navbar-admin">
+        <li><a class="active" href="erreserbakKudeatu.php">Nire liburuak  <i class="fas fa-book"></i></a> </li>
+        <li><a style="float:left" class="active-verde" type="button" value = "Liburua sartu" onclick = "location.href = 'liburuaSartu.html'">Liburu berria</a></li> 
         <li><a>Liburu katalogoa</a></li>
-        <?php if (isset($_SESSION['email'])){ ?> 
-            <li style="float:right"><a href="../datuakAldatu/datuakAldatu.php" class="active"><?php echo $izena."  "?><i style='font-size:18px' class='fas'>&#xf406;</i></a></li>
-        <?php }
-        else{ ?>
-            <li style="float:right"><a class="active-verde" href="../saioaHasi/login.html" ">Saioa hasi</a></li>
-       <?php } ?>
-       <?php if (isset($_SESSION['email'])){ ?>
-            <?php if ($admin==1){ ?>
-            <li style="float:right" class="active-verde" type="button" value = "Liburua sartu" onclick = "location.href = 'liburuaSartu.html'"></li>
-            <?php } ?>
-            <li><a href="sesioaItxi.php" class="active-oscuro"><i style="font-size:24px" class="fa">&#xf08b;</i></a></li>
-            </div>
+        <li style="float:right"><a href="../datuakAldatu/datuakAldatu.php" class="active"><?php echo $izena."  "?><i style='font-size:18px' class='fas'>&#xf406;</i></a></li>
+        <li><a href="sesioaItxi.php" class="active-oscuro"><i style="font-size:24px" class="fa">&#xf08b;</i></a></li>   
+        </ul>    
+    <?php }else {?>
+        <ul class="navbar-erabiltzaile">
+        <li><a class="active" href="erreserbakKudeatu.php">Nire liburuak  <i class="fas fa-book"></i></a> </li>
+        <li><a>Liburu katalogoa</a></li>
+        <li style="float:right"><a href="../datuakAldatu/datuakAldatu.php" class="active"><?php echo $izena."  "?><i style='font-size:18px' class='fas'>&#xf406;</i></a></li>
+        <li><a href="sesioaItxi.php" class="active-oscuro"><i style="font-size:24px" class="fa">&#xf08b;</i></a></li>
+        </ul>
+    <?php }}else{ ?>
+        <ul class="navbar-ikusle">
+        <li><a>Liburu katalogoa</a></li>
+        <li style="float:right"><a class="active-verde" href="../saioaHasi/login.html" ">Saioa hasi</a></li>
+        <li style="float:right"><a class="active" href="../erregistratu/erregistroa.html" ">Erregistratu</a></li>
+        </ul>
+        </ul>
     <?php } ?>
-    </ul>
-
    
     
     <div class = "liburutegia">

@@ -13,6 +13,42 @@ ul {
     background-color: #333;
     height: auto;
 }
+.navbar-admin {
+    font-size: 22px;
+    display: grid;
+    grid-template-columns: 10% 10% auto 10% 5% ;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0;
+    background-color: #333;
+    height: auto;
+}
+.navbar-erabiltzaile{
+    font-size: 22px;
+    display: grid;
+    grid-template-columns: 10% auto 15% 5% ;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0;
+    background-color: #333;
+    height: auto;
+
+}
+
+.navbar-ikusle{
+    font-size: 22px;
+    display: grid;
+    grid-template-columns: auto 10% 10% ;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0;
+    background-color: #333;
+    height: auto;
+
+}
+
+
+
 
 li {
     float: left;
@@ -31,6 +67,9 @@ li a {
     background-color: #fff050;
     color: #333;
 }
+.active:hover {
+    background-color: #e9dc48;
+}
 
 .active-oscuro{
     background-color: #e0d447;
@@ -39,8 +78,7 @@ li a {
 }
 
 .active-verde:hover {
-    background-color: #e6e6e6;
-    color: rgb(211, 211, 211);
+    background-color: #39b84e;
 }
 
 
